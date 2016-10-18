@@ -13,18 +13,21 @@
   <p>Hi My name is IceBear. The world is not ready for what icebear can do</p>
  <canvas></canvas>
   <script>
-   function changeHeader(){
-    var Icebear = promt("write stuff here", "Icebear")
-      p.innerHTML = p.innerHTML + "<img src = 'http://vignette2.wikia.nocookie.net/webarebears/images/5/5f/Primal_Ice_Bear.png/revision/latest?cb=20150815141643'>" + stuff;
-      console.log("IceBear...")
-  }
-   function Icebear(){var canvas = document.querySelector("canvas");
-canvas.width = 400;
-canvas.height = 80;
+var canvas = document.querySelector("canvas");
+canvas.width = 500;
+canvas.height = 120;
 var ctx = canvas.getContext("2d");
-ctx.font = "bold 30px Arial";
-ctx.fillStyle = "goldenrod";
-ctx.fillText("i My name is IceBear. The world is not ready for what icebear can do",10,30);
+ctx.font = "bold 30px Comic Sans MS";
+
+function drawRainbow (text,x,y) {
+  var colors = ["red","orange","green","blue","indigo","violet"];
+  for (i = 0; i < colors.length; i++) {
+    ctx.fillStyle = colors[i];
+    ctx.fillText(text, x+ i * 3, y + i * 3)
+  }
+}
+
+drawRainbow("Hello World! - Canvas Extra",10,70);
    }
   </script>
 </body>
